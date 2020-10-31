@@ -1,5 +1,7 @@
-DROP TABLE "titles";
+-- drop table titles if it exists
+DROP TABLE IF EXISTS "titles";
 
+-- create titles table
 CREATE TABLE "titles" (
     "title_id" VARCHAR   NOT NULL,
     "title" VARCHAR   NOT NULL,
@@ -8,8 +10,10 @@ CREATE TABLE "titles" (
      )
 );
 
-DROP TABLE "employees";
+-- drop table employees if it exists
+DROP TABLE IF EXISTS "employees";
 
+-- create employees table
 CREATE TABLE "employees" (
     "emp_no" INT   NOT NULL,
     "emp_title_id" VARCHAR   NOT NULL,
@@ -23,6 +27,10 @@ CREATE TABLE "employees" (
      )
 );
 
+-- drop table departments if it exists
+DROP TABLE IF EXISTS "departments";
+
+-- create departments table
 CREATE TABLE "departments" (
     "dept_no" VARCHAR   NOT NULL,
     "dept_name" VARCHAR   NOT NULL,
@@ -31,6 +39,10 @@ CREATE TABLE "departments" (
      )
 );
 
+-- drop table dept_manager if it exists
+DROP TABLE IF EXISTS "dept_manager";
+
+-- create dept_manager table
 CREATE TABLE "dept_manager" (
     "dept_no" VARCHAR   NOT NULL,
     "emp_no" INT   NOT NULL,
@@ -39,6 +51,10 @@ CREATE TABLE "dept_manager" (
      )
 );
 
+-- drop table dept_emp if it exists
+DROP TABLE IF EXISTS "dept_emp";
+
+-- create dept_emp table
 CREATE TABLE "dept_emp" (
     "emp_no" INT   NOT NULL,
     "dept_no" VARCHAR   NOT NULL,
@@ -47,6 +63,10 @@ CREATE TABLE "dept_emp" (
      )
 );
 
+-- drop table salaries if it exists
+DROP TABLE IF EXISTS "salaries";
+
+-- create salaries table
 CREATE TABLE "salaries" (
     "emp_no" INT   NOT NULL,
     "salary" INT   NOT NULL,
@@ -55,6 +75,7 @@ CREATE TABLE "salaries" (
      )
 );
 
+-- add foreign key constraints
 ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY("emp_title_id")
 REFERENCES "titles" ("title_id");
 
@@ -73,6 +94,7 @@ REFERENCES "departments" ("dept_no");
 ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
 
+-- view tables
 SELECT * FROM titles;
 SELECT * FROM employees;
 SELECT * FROM departments;
