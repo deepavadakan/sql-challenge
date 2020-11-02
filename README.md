@@ -109,15 +109,17 @@ ORDER BY count DESC;
 ```
 
 ## Bonus 
-* Create a histogram to visualize the most common salary ranges for employees.
+* Create a histogram to visualize the most common salary ranges for employees.  
 ![hist_sal_emp](EmployeeSQL/Images/hist_sal_emp.png)
-
-* Create a bar chart of average salary by title.
+  
+* Create a bar chart of average salary by title.  
 ![avg_salbytitle](EmployeeSQL/Images/avg_salbytitle.png)
 
 
 ## Observations
 * Salary for employee ID 499942: $40000
+
+Hmmm! An Assistant Engineer, Engineer, Senior Engineer and Technique Leader all get about the same average salaries?
 
 
 ## Contact
